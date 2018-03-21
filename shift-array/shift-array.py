@@ -6,37 +6,8 @@ inputValue1 = 5
 input2 = [4, 8, 15, 23, 42]
 inputValue2 = 16
 
-# declarations
-# length = 0
-# middle = 0
-
-
 # determine length of input list
 
-# def list_length(input_list):
-#     length = 0
-#     for item in input_list:
-#         length += 1
-#     print('length', length)
-#     return length
-
-
-# find middle position of array
-
-def middle_position(length):
-    print(length)
-    middle = 0  
-    if length % 2 == 0:
-        middle = length / 2
-        print('middle even', middle)
-        return middle
-    else:
-        middle = (length // 2) + 1
-        print('middle odd', middle)
-        return middle
-
-
-# for loop through each index and copy value into new list
 
 def new_list(input_list, input_value):
 
@@ -44,30 +15,47 @@ def new_list(input_list, input_value):
 
     for item in input_list:
         length += 1
-    print('length', length)
-    
+    # print('length', length)
+
+
+# find middle position of array
+
     middle = 0  
     if length % 2 == 0:
         middle = length / 2
-        print('middle even', middle)   
+        # print('middle even', middle)   
     else:
         middle = (length // 2) + 1
-        print('middle odd', middle)
-        
+        # print('middle odd', middle)
+
+
+# for loop through each index and copy value into new list
+
     output_list = []
+    counter = 0
     for index in input_list:
-        if index < middle:
+        
+        # print('counter %d' % counter)
+        # print('index %d' % index)
+        if counter < middle:
             output_list += [index]
-        elif index == middle:
+            counter += 1
+        elif counter == middle:
             output_list += [input_value]
             output_list += [index]
+            counter += 1
         else:
             output_list += [index]
+            counter += 1
 
     print(output_list)
     return output_list
 
+# sample test cases  #run > python3 shift-array.py in terminal
+
+
 new_list(input1, inputValue1)
+new_list(input2, inputValue2)
 
 
 
