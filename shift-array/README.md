@@ -12,4 +12,4 @@ Input	Output
 
 ###Whiteboard Solution From Group
 
--files can be found here: /assets
+-files can be found here: https://github.com/keitheck/data-structures-and-algorithms/tree/master/shift-array/assets
