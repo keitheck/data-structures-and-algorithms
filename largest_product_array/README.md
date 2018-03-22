@@ -9,4 +9,4 @@ Input	                                                Output
 
 ### Whiteboard Solution From Group
 
--[whiteboard photos can be found here:](https://github.com/keitheck/data-structures-and-algorithms/tree/binary-search/binary-search/assets)
+-[whiteboard photos can be found here:](https://github.com/keitheck/data-structures-and-algorithms/tree/largest_product/largest_product_array/assets)
