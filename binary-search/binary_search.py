@@ -1,6 +1,6 @@
 
 
-def find_index(list, key):
+def binary_search(list, key):
     """
     This function accepts a sorted list of ints of unknown length and
     a key value.  Will return the index of matched key.
