@@ -1,5 +1,5 @@
 import pytest
-from node import Node
+from linked_list.node import Node
 from linked_list import LinkedList as LLCONFTEST
 
 @pytest.fixture
