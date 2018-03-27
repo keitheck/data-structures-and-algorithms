@@ -1,4 +1,4 @@
-from linked_list import LinkedList as ll
+from .linked_list import LinkedList as ll
 import pytest as pytest
 
 
@@ -52,3 +52,63 @@ def test_magic_len_(new_ll_iter):
     """test __len__"""
     assert new_ll_iter.__len__() == 4
 
+
+def test_append_one(new_ll_iter):
+    """append item to ll"""
+    a = new_ll_iter
+    a.append(1)
+    assert len(a) == 5
+
+
+def test_append_empty(empty_new_list):
+    """test append to empty list"""
+    a = empty_new_list
+    a.append(1)
+    assert len(a) == 1
+
+
+def test_append_multiple(new_ll_iter):
+    """test append multiple time to linked list"""
+    a = new_ll_iter
+    a.append(1)
+    a.append(1)
+    a.append(1)
+    assert len(a) == 7        
+
+
+def test_insertBefore_one(new_ll_iter):
+    """append item to ll"""
+    a = new_ll_iter
+    a.insertBefore(2, 9)
+    assert len(a) == 5
+
+
+def test_insertBefore_empty(empty_new_list):
+    """returns error message"""
+    a = empty_new_list
+    assert a.insertBefore(1, 2) == 'This Linked List is Empty'
+    
+
+def test_insertBefore_has_value(new_ll_iter):
+    """find unique inserted number"""
+    a = new_ll_iter
+    a.insertBefore(2, 9)
+    assert a.find(9) is True
+
+
+def test_insertAfter_one(new_ll_iter):
+    """insertAfter item to ll"""
+    a = new_ll_iter
+    a.insertAfter(2, 9)
+    assert len(a) == 5
+
+def test_insertAfter_empty(empty_new_list):
+    """returns error message"""
+    a = empty_new_list
+    assert a.insertAfter(1, 2) == 'This Linked List is Empty, did not insert new value'
+
+
+def test_insertAfter_multiple(new_ll_iter):
+    a = new_ll_iter
+    a.insertAfter(2, 9)
+    assert a.find(9) is True      
