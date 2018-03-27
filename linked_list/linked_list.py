@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 
 """
 DONE: Create a Class for a LinkedList which creates an empty 
@@ -37,9 +37,6 @@ class LinkedList:
         self._current = None
         self._size = 0
         self.print_welcome()
-        
-        # if type(iter) is int or str:
-        #     raise TypeError('When instantiated, a [] List is required.')
 
         for item in reversed(iter): 
             # want to reverse the list so items are inserted in correct order
@@ -85,7 +82,6 @@ class LinkedList:
             Please enter only a string or an integer
             """)
 
-
     def find(self, x):
         """
         Define a method called find which takes any value as an 
@@ -119,6 +115,59 @@ class LinkedList:
         ########################################
         """)
 
+    def append(self, val):
+        """add node to end of linked list"""
+        if self._size == 0:
+            self.insert(val)
+            return
+        node_index = self.head
+        if not node_index._next:
+            node_index = Node(val)
 
-# a = [1, 2, 3, 'd', 'e', 'f', 'g', 8]
-# ll = LinkedList(a)
+        while node_index._next:
+            node_index = node_index._next
+            print('while loop')
+            print('node index => {}'.format(node_index))
+        node_index._next = Node(val) 
+        self._size += 1     
+        return 'length => {}'.format(self.__len__())  
+
+    def insertBefore(self, val, newVal):
+        """add node with new Val before node with val"""
+        if self._size == 0:
+            return 'This Linked List is Empty'
+        previous_node = self.head
+        """check if previous_node matches val"""
+        if previous_node.val == val:
+            self.head = Node(newVal, previous_node)
+            return self
+        if previous_node._next:
+            x = previous_node._next
+            while x:
+                if x.val == val:
+                    print('x', x)
+                    new_insert = Node(newVal, x)
+                    previous_node._next = new_insert
+                    self._size += 1
+                    print('length => {}'.format(self.__len__()))
+                    return
+                previous_node = x
+                x = x._next
+        return 'did not insert, key value not found'    
+
+    def insertAfter(self, val, newVal):
+        """add node with new val after node with val"""
+        if self._size == 0:
+            return 'This Linked List is Empty, did not insert new value' 
+        node = self.head
+        while node:
+            # import pdb; pdb.set_trace()
+            if node.val == val:
+                print('Node.val => {}'.format(node.val))
+                newNode = Node(newVal,node._next)
+                node._next = newNode
+                self._size += 1
+                return
+            node = node._next    
+        return 'did not insert, key value not found'          
+

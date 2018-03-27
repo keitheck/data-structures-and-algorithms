@@ -1,11 +1,12 @@
 import pytest
-from node import Node
-from linked_list import LinkedList as LLCONFTEST
+# from node import Node
+from .linked_list import LinkedList as LLCONFTEST
 
 @pytest.fixture
 def empty_new_list():
     """test new linked list """
-    return LLCONFTEST()
+    b = LLCONFTEST()
+    return b
 
 
 @pytest.fixture
@@ -17,4 +18,5 @@ def new_ll_iter():
 def new_ll_nested():
     """test insertion of nexted lists"""
     return LLCONFTEST([{1:1}, [2,2], 3, 'string'])
+
 
