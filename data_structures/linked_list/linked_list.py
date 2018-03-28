@@ -1,4 +1,4 @@
-from .node import Node
+from node import Node
 
 """
 DONE: Create a Class for a LinkedList which creates an empty 
@@ -183,4 +183,19 @@ class LinkedList:
             counter += 1
             node = node._next
         raise IndexError('requested node outside linked list length')
+
+
+def mergeLists(ll1, ll2):
+    """merges 2 LL's in zipper style"""
+    x = ll1.head
+    node = x
+    if not x:
+        ll1.head = ll2.head
+        return ll2.head
+    y = ll2.head
+    while x and y:
+        x._next, y = y, x._next
+        x = x._next
+    return ll1
+
 
