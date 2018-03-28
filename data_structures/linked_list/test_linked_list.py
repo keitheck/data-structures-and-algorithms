@@ -1,5 +1,5 @@
-from .linked_list import LinkedList as ll
-from .node import Node
+from linked_list import LinkedList as ll, mergeLists
+from node import Node
 import pytest as pytest
 
 
@@ -111,25 +111,51 @@ def test_insertAfter_empty(empty_new_list):
 
 
 def test_insertAfter_multiple(new_ll_iter):
+    """test correct insertion after"""
     a = new_ll_iter
     a.insertAfter(2, 9)
     assert a.find(9) is True      
 
 
 def test_kth_raises_indexerror(new_ll_iter):
+    """handles error as intended"""
     a = new_ll_iter
     with pytest.raises(IndexError):
         a.kthFromEnd(6) 
 
 
 def test_kth_returns_one(new_ll_iter):
+    """returnse corrext value"""
     a = new_ll_iter.kthFromEnd(3)
     assert a.val == 1
 
 
 def test_kth_returns_first(empty_new_list):
+    """returns empty list"""
     a = empty_new_list
     a.insert(1)
     assert type(a.kthFromEnd(0)) is Node
 
-      
+
+def test_mergeLists_one(empty_new_list, new_ll_iter):
+    """tests empty list in first position and populated list merge correcly"""
+    a = empty_new_list
+    b = new_ll_iter
+    mergeLists(a, b)
+    assert a.head._next._next.val is 3 
+
+
+def test_mergeLists_two(new_ll_iter, new_ll_iter_two):
+    """tests two populated lists merge correcly"""
+    a = new_ll_iter
+    b = new_ll_iter_two
+    mergeLists(a, b)
+    assert a.head._next._next._next.val is 6
+
+
+def test_mergeLists_three(new_ll_iter, empty_new_list):
+    """tests empty list in second position merges correctly"""
+    a = new_ll_iter
+    b = empty_new_list
+    mergeLists(a, b)
+    assert a.head._next._next.val is 3      
