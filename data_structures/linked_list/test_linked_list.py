@@ -1,4 +1,5 @@
 from .linked_list import LinkedList as ll
+from .node import Node
 import pytest as pytest
 
 
@@ -102,6 +103,7 @@ def test_insertAfter_one(new_ll_iter):
     a.insertAfter(2, 9)
     assert len(a) == 5
 
+
 def test_insertAfter_empty(empty_new_list):
     """returns error message"""
     a = empty_new_list
@@ -112,3 +114,22 @@ def test_insertAfter_multiple(new_ll_iter):
     a = new_ll_iter
     a.insertAfter(2, 9)
     assert a.find(9) is True      
+
+
+def test_kth_raises_indexerror(new_ll_iter):
+    a = new_ll_iter
+    with pytest.raises(IndexError):
+        a.kthFromEnd(6) 
+
+
+def test_kth_returns_one(new_ll_iter):
+    a = new_ll_iter.kthFromEnd(3)
+    assert a.val == 1
+
+
+def test_kth_returns_first(empty_new_list):
+    a = empty_new_list
+    a.insert(1)
+    assert type(a.kthFromEnd(0)) is Node
+
+      

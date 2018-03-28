@@ -169,5 +169,18 @@ class LinkedList:
                 self._size += 1
                 return
             node = node._next    
-        return 'did not insert, key value not found'          
+        return 'did not insert, key value not found'   
+
+    def kthFromEnd(self, k):
+        """return node from index k of linked list"""
+        # ll_length = self._size
+        x = self._size - (k + 1)
+        node = self.head
+        counter = 0
+        while node:
+            if counter == x:
+                return node
+            counter += 1
+            node = node._next
+        raise IndexError('requested node outside linked list length')
 
