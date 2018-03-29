@@ -184,6 +184,24 @@ class LinkedList:
             node = node._next
         raise IndexError('requested node outside linked list length')
 
+    def hasLoop(self):
+        """returns false if no looped node reference"""
+        self.node1 = self.head
+        if self.node1 is None:
+            return False
+        else:
+            self.node2 = self.node1._next
+            while self.node2 is not None:
+                if self.node1 is self.node2:
+                    return True
+                self.node2 = self.node2._next
+                if self.node1 is self.node2:
+                    return True
+                if self.node2 is None:
+                    return False
+                self.node1 = self.node1._next
+                self.node2 = self.node2._next
+
 
 def mergeLists(ll1, ll2):
     """merges 2 LL's in zipper style"""

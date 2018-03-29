@@ -159,3 +159,21 @@ def test_mergeLists_three(new_ll_iter, empty_new_list):
     b = empty_new_list
     mergeLists(a, b)
     assert a.head._next._next.val is 3      
+
+
+def test_hasLoop_one(empty_new_list):
+    """test if retruns true on empty list"""
+    assert empty_new_list.hasLoop() is False
+
+
+def test_hasLoop_two(new_ll_iter):
+    """test if returns true on singly linked list"""
+    assert new_ll_iter.hasLoop() is False   
+
+
+def test_hasLoop_three(new_ll_iter): 
+    """test if returns fals on looped linked list"""
+    LLL = new_ll_iter
+    LLL.head._next._next._next._next = LLL.head
+    assert LLL.hasLoop() is True  
+
