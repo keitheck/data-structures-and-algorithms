@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 
 
 class Stack:
@@ -36,7 +36,7 @@ class Stack:
 
     def push(self, val):
         """adds a node to top of stack"""
-        node = Node(val,self.top)
+        node = Node(val, self.top)
         node._next = self.top
         self.top = node
         self._size += 1
