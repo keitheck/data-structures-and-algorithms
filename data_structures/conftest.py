@@ -1,15 +1,20 @@
-from stack.stack import Stack
+from queue_with_stacks import Queue_with_stacks
 import pytest
 
 
 @pytest.fixture
 def empty_stack():
-    return Stack()
+    return Queue_with_stacks()
+
+
+@pytest.fixture
+def iter_stack():
+    return Queue_with_stacks([1, 2, 3, 4, 5])    
 
 
 @pytest.fixture
 def small_stack():
-    s = Stack()
+    s = Queue_with_stacks()
     s.push(1)
     s.push(2)
     s.push(3)
@@ -20,7 +25,7 @@ def small_stack():
 
 @pytest.fixture
 def large_stack():
-    s = Stack()
+    s = Queue_with_stacks()
 
     for num in range(1000):
         s.push(num)
