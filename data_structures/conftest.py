@@ -1,5 +1,11 @@
 from queue_with_stacks import Queue_with_stacks
+from fifo_animal_shelter import AnimalShelter as ASH
 import pytest
+
+
+@pytest.fixture
+def test_AHS_inits():
+    return ASH()
 
 
 @pytest.fixture
