@@ -1,8 +1,8 @@
 # Data Structure & Algorithms
-A repository dedicated to my passion and appreciation for all things data structures and algorithms!
+A repository dedicated to my passion and appreciation for all things data structures and algorithms!  These may or may not be the best solution to the challenge, but most have Big-O time and size as considerations in the solutions.
 
 ## Installation
-Follows a standard GitHub workflow for cloning and requiring implementations using my favorite language of choice, wat.
+Follows a standard GitHub workflow for cloning.  Most can be run using ipython and importing the file/function or by running the file directly in console by running ```$ python3 filename.py```
 
 #Whiteboarding Challenges
 
