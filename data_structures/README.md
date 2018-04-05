@@ -20,4 +20,10 @@
     -dequeue() which extracts a value from the Queue using a first-in, first-out approach.
 -You have access to 2 Stack instances with push and pop methods.
 
+### 4-5 Whitebpboard 12 added
+-Create a class called AnimalShelter which holds only dogs and cats. -The shelter operates using a first-in, first-out approach.
+-Implement the following methods:
+-enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+-dequeue(pref): returns either a dog or a cat. If pref, a string, is ‘cat’ return the longest-waiting cat. If pref is ‘dog’, return the longest-waiting dog. For anything else, return either a cat or a dog.
+
 ### Whiteboard photos for all days in assets folder of respective directory.
