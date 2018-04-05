@@ -9,4 +9,14 @@ Follows a standard GitHub workflow for cloning and requiring implementations usi
 ## Table of Contents
 1. Data Structures
     - [shift-array](./data_structures/list)
+    - [linked list](./data_structures/linked_list)
+    - [multi-bracket validation](./data_structures/multi_bracket_validation)
+    - [queue](./data_structures/queue)
+    - [stack](./data_structures/stack)
+    - [animal shelter challenge](./data_structures)
+
 2. Algorithms
+    - [binary search](./challenges/binary-search)
+    - [largest product array](./challenges/largest_product_array)
+    - [shift array](./challenges/shift-array)
+    - [towers of hanoi](./challenges/towers_of_hanoi)
