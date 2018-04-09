@@ -14,7 +14,8 @@ Follows a standard GitHub workflow for cloning.  Most can be run using ipython a
     - [queue](./data_structures/queue)
     - [stack](./data_structures/stack)
     - [animal shelter challenge](./data_structures)
-    - [BST](./data_structures/binary_search_tree) 
+    - [BST](./data_structures/binary_search_tree)
+    - [FizzBuzzTree](./data_structures/fizzbuzztree)
 
 2. Algorithms
     - [binary search](./challenges/binary-search)
