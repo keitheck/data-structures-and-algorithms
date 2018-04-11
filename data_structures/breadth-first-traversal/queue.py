@@ -39,7 +39,6 @@ class Queue:
     
     def enqueue(self, val):
         """add a value to the back of the queue with an O(1) time"""
-        print('fired')
 
         if self.back:
             self.back = Node(val, self.back)
@@ -61,7 +60,7 @@ class Queue:
             x = self.back
             self.back = None
             self._size = 0
-            return x.val    
+            return x    
 
         dequeue = self.back
 

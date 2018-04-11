@@ -15,4 +15,14 @@ def test_medium_tree():
     tree = BST()
     for i in l:
         tree.insert(i)  
-    return tree    
+    return tree
+
+
+@pytest.fixture
+def test_large_tree():
+    """returns large tree"""
+    l = [10, 5, 15, 9, 3, 4567, 55, 6, 1, 12334, 14, 16, 77, 24, 9]
+    tree = BST()
+    for i in l:
+        tree.insert(i)  
+    return tree

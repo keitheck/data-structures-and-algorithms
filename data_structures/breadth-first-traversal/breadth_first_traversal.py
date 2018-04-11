@@ -2,18 +2,19 @@ from queue import Queue
 from bst import BST
 
 
-def breadthFirstTraversal(tree, prnt=print):
+def breadthFirstTraversal(tree):
     """
     takes a tree as an argument and returns 
     the node values in breadth first traversal order
     """
+    l = []
     
     if tree.root is None:
-        return False
+        return l
 
     q = Queue()
-
-    prnt(tree.root.val)
+    l.append(tree.root.val)
+    print(l)
     
     if tree.root.left:
         q.enqueue(tree.root.left)
@@ -21,15 +22,20 @@ def breadthFirstTraversal(tree, prnt=print):
     if tree.root.right:    
         q.enqueue(tree.root.right)
     
-    first = q.front()
-
-    while first:
+    first = q.dequeue()
+    while first.val:
         node = first.val
-        prnt(node.val)
+        l.append(node.val)
+        print(l)
+
         if node.left:
             q.enqueue(node.left)
         if node.right:    
             q.enqueue(node.right)
-        front = first._next    
+
+        if q.back is not None:
+            first = q.dequeue()
+        else:        
+            return l
 
            
