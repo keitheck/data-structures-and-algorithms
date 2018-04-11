@@ -1,10 +1,11 @@
 def recursive_function(n):
     """this function is me trying to understand recurtion"""
-    if n >= 0:
-        print(n)
-        recursive_function(n-1)
-    else:
-        print("finished")   
+    x = []
+    while n > 0:
+        x.append(n)
+        n -= 1
+        recursive_function(n)
+    return x  
 
 
 def tower(n, a, b, c):
@@ -16,10 +17,15 @@ def tower(n, a, b, c):
         tower(n-1, a, c, b)
         visual(n, a, b)
         tower(n-1, c, b, a)
+    return z
+
+
+z = []
 
 
 def visual(num, movefrom, moveto):
-    print(num, "from", movefrom, "to", moveto) 
+    y = (num, "from", movefrom, "to", moveto)
+    z.append(str(y)) 
 
 """
 suggested calls to illustrate recursive solution to towers of hanoi:
