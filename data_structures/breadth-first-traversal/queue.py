@@ -29,6 +29,13 @@ class Queue:
             print("Back of Queue => {}".format(self.back))
         except ValueError:
             print('Queue is empty')
+
+    def front(self):
+        """returns front node"""
+        current = self.back
+        while current._next:
+            current = current._next
+        return current
     
     def enqueue(self, val):
         """add a value to the back of the queue with an O(1) time"""
