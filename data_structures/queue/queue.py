@@ -32,17 +32,16 @@ class Queue:
     
     def enqueue(self, val):
         """add a value to the back of the queue with an O(1) time"""
-        print('fired')
 
         if self.back:
             self.back = Node(val, self.back)
 
         else:
-            print('else: self.back = Node(val)')
+            # print('else: self.back = Node(val)')
             self.back = Node(val)
 
         self._size += 1
-        print('self.back = self.back._next.Node(val)')
+        # print('self.back = self.back._next.Node(val)')
 
     def dequeue(self):
         """removes and returns node value from front of queue"""
