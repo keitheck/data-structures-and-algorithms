@@ -2,6 +2,7 @@ from node import Node
 
 
 class Stack:
+    """create class Stack that instanstiates a new Stack"""
 
     def __init__(self, iterable=[]):
         self.top = None

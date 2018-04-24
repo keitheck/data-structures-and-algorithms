@@ -4,6 +4,7 @@ import pytest
 
 @pytest.fixture
 def empty_stack():
+    """returns empty instanstiated stack"""
     return Stack()
 
 
