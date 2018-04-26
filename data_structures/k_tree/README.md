@@ -3,6 +3,7 @@
 # Technologies
 - Python 3
 
+# Task
 - Create a Class or a Node which is aware of the value as val and children as a list collection of Nodes
 - Ensure that you have a __repr__ and __str__ method defined to return appropriate representations of the node
 - Create a Class for a KTree, which is aware of the root of the tree as root
