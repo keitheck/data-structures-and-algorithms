@@ -33,7 +33,7 @@ class Ktree:
         return 'root value: {}'.format(self.root.val)
 
     def pre_order(self, operation=None):
-        """returns node values in a pre-order traversal
+        """walks nodes in a pre-order traversal
            takes an argument operation in the form of a lambda function         
         """
 
@@ -53,7 +53,7 @@ class Ktree:
 
     def post_order(self, operation=None):
         """
-        returns node values in a pre-order traversal
+        walks nodes in a pre-order traversal
         takes an argument operation in the form of a lambda function         
         """
         
@@ -73,7 +73,25 @@ class Ktree:
 
     def breadth_first(self, operation=None):
         """
-        returns node valuse in beadth first traversal.
+        walks nodes in beadth first traversal.
         takes an argument operation in the form of a lambda function
         """
-        pass
+        def _walk(iterable):
+            node_list = []
+            for item in iterable:
+                operation(item)
+                for child in item.children:
+                    node_list.append(child)
+
+            if len(node_list):
+                _walk(node_list)
+
+        if self.root:
+            _walk([self.root])
+
+    def insert(self, val, searchval):
+        """
+        method that adds a node with val as value as a child of node with nodeval as value
+        """     
+        node = Node(val, [])   
+        self.breadth_first(lambda x: x.children.append(node) if x.val == searchval else False)
