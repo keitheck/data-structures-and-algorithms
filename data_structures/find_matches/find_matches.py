@@ -99,4 +99,5 @@ class Ktree:
 
 def find_matches(ktree, target):
     collection = []
-    ktree.breadth_first(lambda x: if x.val == searchval collection.append(x))        
+    ktree.breadth_first(lambda x: collection.append(x) if x.val == target else False)
+    return collection
