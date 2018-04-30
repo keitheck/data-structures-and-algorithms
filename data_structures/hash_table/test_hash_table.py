@@ -36,14 +36,24 @@ def test_set(insert_HT):
     ht = insert_HT
     ht.set('b', 999)
     assert ht.buckets[98].head.val['b'] == 999
-
+    
 
 def test_set_2(insert_HT):
     """tests set works as expected on multiple insert of same hash key val."""
     ht = insert_HT
-    ht.set('PP', 6)
+    ht.set('PPP', 6)
     ht.set('xx', 999)
-    assert ht.buckets[240].head._next.val['PP'] == 6    
+    assert ht.buckets[240].head._next.val['PPP'] == 6
+
+
+def test_linked_list(insert_HT):
+    """tests linked list insert inserts a unique link lists"""
+    ht = insert_HT
+    ht.set('ttt', 1000)
+    ht.set('PPP', 6)
+    ht.set('xx', 999)
+    ht.set('tesssst', 2000)
+    assert ht.buckets[240].head._next.val['PPP'] == 6  
 
 
 def test_get_raises_typerror(insert_HT):
