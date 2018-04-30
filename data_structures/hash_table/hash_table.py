@@ -1,4 +1,3 @@
-from functools import reduce
 from linked_list import LinkedList
 
 
@@ -14,7 +13,6 @@ class HashTable:
         linked_list = LinkedList()
         self.max_size = max_size
         self.buckets = [linked_list] * self.max_size
-        # print(self.buckets)
 
     def hash_key(self, key):
         """
@@ -23,12 +21,8 @@ class HashTable:
         if type(key) is not str:
             raise TypeError
 
-        # return reduce(lambda a, b: a + ord(b), list(key), 0) % self.buckets
-
         sum = 0
         for char in key:
-            # print(ord(char))
-            # print(len(self.buckets))
             sum += ord(char)
         return sum % len(self.buckets)
 
@@ -45,15 +39,6 @@ class HashTable:
         # hash the key; get a location for the bucket to insert into
         # set val into bucket
 
-        # You will handle collissions here...
-        # Your values may look something like a DB record:
-            # {
-            #     'id': '123',
-            #     'name':'xxx',
-            #     'title': 'zzz',
-            # }
-        # self.buckets[self.hash_key(key)] = val
-
     def get(self, key):
         """
         uses key to return value from index.
@@ -68,7 +53,7 @@ class HashTable:
             if key in node.val.keys():
                 return node.val[key]
             node = node._next    
-
+        
         return 'key does not exist in hash table'
 
     def remove(self, key):
