@@ -10,9 +10,10 @@ class HashTable:
         if type(max_size) is not int:
             raise TypeError
 
-        linked_list = LinkedList()
+        # linked_list = LinkedList()
         self.max_size = max_size
-        self.buckets = [linked_list] * self.max_size
+        # self.buckets = [linked_list] * self.max_size  # this returns the same list in each
+        self.buckets = [LinkedList() for _ in range(self.max_size)]
 
     def hash_key(self, key):
         """
