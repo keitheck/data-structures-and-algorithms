@@ -1,5 +1,30 @@
-from .k_tree import Ktree
+from .find_matches import Ktree, find_matches
 import pytest
+
+
+def test_find_matches(depth_one_tree):
+    """tests returns correct match"""
+    assert str(find_matches(depth_one_tree, 4)) == str([4])
+
+
+def test_find_matches_none(depth_one_tree):
+    """tests returns empty"""
+    assert str(find_matches(depth_one_tree, 7)) == str([])
+
+
+def test_find_matches_3(depth_one_tree):
+    """tests returns correct of child of children"""
+    depth_one_tree.insert(7,3)
+    assert str(find_matches(depth_one_tree, 7)) == str([7])        
+
+
+def test_find_matches_4(depth_one_tree):
+    """tests returns correct of multiple child of children"""
+    depth_one_tree.insert(7,3)
+    depth_one_tree.insert(7,0)
+    depth_one_tree.insert(7,4)
+
+    assert str(find_matches(depth_one_tree, 7)) == str([7, 7, 7]) 
 
 
 def test_empty_tree(height_one_tree):

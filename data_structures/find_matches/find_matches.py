@@ -87,7 +87,7 @@ class Ktree:
                 _walk(node_list)
 
         if self.root:
-            _walk([self.root])
+            _walk([self.root])        
 
     def insert(self, val, searchval):
         """
@@ -95,3 +95,9 @@ class Ktree:
         """     
         node = Node(val, [])   
         self.breadth_first(lambda x: x.children.append(node) if x.val == searchval else False)
+
+
+def find_matches(ktree, target):
+    collection = []
+    ktree.breadth_first(lambda x: collection.append(x) if x.val == target else False)
+    return collection

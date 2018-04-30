@@ -1,4 +1,4 @@
-from .k_tree import Ktree
+from .find_matches import Ktree, find_matches
 import pytest
 
 @pytest.fixture
