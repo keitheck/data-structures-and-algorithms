@@ -25,3 +25,7 @@ Written using Python 3.6
 - Python 3.6
 - iPython
 - Pytest
+
+
+## Whiteboard
+![Photo](assets/repeated_word_whiteboard.jpg)
