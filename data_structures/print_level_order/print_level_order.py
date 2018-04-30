@@ -95,3 +95,35 @@ class Ktree:
         """     
         node = Node(val, [])   
         self.breadth_first(lambda x: x.children.append(node) if x.val == searchval else False)
+
+
+def print_level_order(tree):
+    '''takes a ktree and prints each level on a single line'''
+    
+    if not isinstance(tree, Ktree):
+        raise TypeError('argument must be of type <KTree>')
+
+    final_output = []
+
+    def _walk(current):
+        output_list = []
+        node_list = []
+        for node in current:
+            output_list.append(str(node.val))
+            
+            for child in node.children:
+                node_list.append(child)
+
+        # print('print_output_fired')
+        print_output = ' '.join(output_list)
+        final_output.append(print_output)
+
+        if len(node_list):
+            _walk(node_list)
+
+    if tree.root:
+        _walk([tree.root]) 
+
+    # print(final_output) # this line will print the list
+    print('\n'.join(final_output))  # this line will print the list with each level on its own line
+    return final_output  # adding a return of final_output list for testing
