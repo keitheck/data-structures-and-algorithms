@@ -17,7 +17,7 @@ def mergesort(arr):
         for i in range(half):
             left = left + [arr[i]]
             right = right + [arr[len(arr) - 1 - i]]
-        print('split', left, right)
+        # print('split', left, right)
         if len(left) > 1:
             left = recurse(left)
         if len(right) > 1:
@@ -36,12 +36,11 @@ def mergesort(arr):
             elif left[i] >= right[j]:
                 output.append(right[j])
                 j = j + 1
-            print('merging', left, right, '=>', output)
+            # print('merging', left, right, '=>', output)
         output.extend(left[i:])
         output.extend(right[j:])
 
-
-        print('merged', output, '\n')
+        # print('merged', output, '\n')
         return output
 
     return recurse(arr)
