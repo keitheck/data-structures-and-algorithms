@@ -14,6 +14,7 @@ class HashTable:
         self.max_size = max_size
         # self.buckets = [linked_list] * self.max_size  # this returns the same list in each
         self.buckets = [LinkedList() for _ in range(self.max_size)]
+    
 
     def hash_key(self, key):
         """
@@ -57,22 +58,24 @@ class HashTable:
         
         return None
 
-    def __iter__(self):
+    def return_k_v(self):
         """
-        Finds all keys in hash table and returns an iterable list of key
-        values. use next(return_object) to iterate
+        Finds all keys in hash table and returns an iterable list of keys. 
         """
         output_list = []
 
         for bucket in self.buckets:
             node = bucket.head
             while node:
-                if node.val:
-                    output_list = output_list + [node.val.keys()]
+                for key in node.val.keys():
+                    output_list = output_list + [key]
+                # if node.val:
+                #     output_list = output_list + [node.val.keys()]
                 if node._next is not None:
                     node = node._next
                 else:
-                    node = False   
+                    node = False
+        # import pdb; pdb.set_trace()
         return output_list
 
     def remove(self, key):
