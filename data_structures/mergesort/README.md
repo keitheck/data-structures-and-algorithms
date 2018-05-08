@@ -19,4 +19,7 @@ Written using Python 3.6
 ## Resources
 - Python 3.6
 - iPython
-- Pytest
+
+## Pytest## Whiteboard Photo
+![whiteboard](assets/lab36sorting.jpg)
+
