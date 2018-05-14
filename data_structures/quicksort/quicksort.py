@@ -1,16 +1,19 @@
 def quicksort(array):
     """
     Returns an ordered list using a quicksort algorithm.
-    Pivot = p, i = pointer left, j = pointer right
     """
-    p = array[0]
-    i = array[1]
-    j = array[-1]
 
-    def recurse(array, left, right):
-        if left > right:
+    if len(array) == 1 or len(array) == 0:
+        return array
 
-    
-    def divide(array, left, right):
-        pivot = list[0]
-        
+    piv = array[len(array) - 1]
+    R, L, P = [], [], []
+
+    while array[0] != piv:
+        if array[0] > piv:
+            R.append(array.pop(0))
+        elif array[0] < piv:
+            L.append(array.pop(0))
+    P = [piv]
+
+    return quicksort(L) + P + quicksort(R)
